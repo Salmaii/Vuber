@@ -93,36 +93,43 @@ class Grafo:
             print(self.grafo[i])
 
     def dijkstra(self, origem): 
-        custo_vem = [[-1, 0] for i in range(self.vertices)]
-        custo_vem[origem - 1] = [0, origem]
+        custo_vem = [[-1, 0, 0] for i in range(self.vertices)]
+        custo_vem[origem - 1] = [ 0, origem, 1]
         h = HeapMin()
         h.adiciona_no(0, origem)
+        print(f'Saida  Destino   Total')
         while h.tamanho() > 0:
+            
             dist, v = h.remove_no()
             for i in range(self.vertices):
                 if self.grafo[v-1][i] != 0:
                     if custo_vem[i][0] == -1 or custo_vem[i][0] > dist + self.grafo[v-1][i]:
-                        custo_vem[i] = [dist + self.grafo[v-1][i], v]
+                        destino = i 
+                        custo_vem[i] = [dist + self.grafo[v-1][i], v, destino + 1]
+                        total = dist + self.grafo[v-1][i]
+                        print(f'{v}    →    {destino + 1} =     {total}KM')
                         h.adiciona_no(dist + self.grafo[v-1][i], i+1)
-        return custo_vem
-
+            custo_total = [origem, destino + 1, total]              
+                      
+        
+        return custo_total
 
 
 
 qntd = int(input("Insira a quantidade de alunos: "))
-print(f'Olá, quantidade = {qntd}')
-g = Grafo(qntd)
+qntdtotal = qntd + 2
+print(f'Olá, quantidade = {qntdtotal}')
+g = Grafo(qntdtotal)
 
-i = int(((qntd * qntd) - qntd)/2)
+i = int(((qntdtotal * qntdtotal) - qntdtotal)/2)
 print(f'Existem {i} interacoes')
 
-for origem in range (1, qntd + 1) :
+for origem in range (1, qntdtotal + 1) :
 
-    for proximo in range (1, qntd + 1) :
-        if origem != proximo and origem < proximo: 
-
+    for proximo in range (1, qntdtotal + 1) :
+        if origem != proximo and origem < proximo:
             peso = int(input(f'({origem},{proximo}) - Insira o peso da rota: '))
-            print(f'{origem} -> {proximo} = {peso} && {proximo} -> {origem} = {peso}')     
+            print(f'{origem} → {proximo} = {peso} && {proximo} → {origem} = {peso}')     
 
             g.adiciona_aresta(origem, proximo, peso)
             g.adiciona_aresta(proximo, origem, peso)
