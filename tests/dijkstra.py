@@ -97,7 +97,7 @@ class Grafo:
         custo_vem[origem - 1] = [ 0, origem, 1]
         h = HeapMin()
         h.adiciona_no(0, origem)
-        print(f'Saida  Destino   Total')
+        print(f'Saida   Destino   Total')
         while h.tamanho() > 0:
             
             dist, v = h.remove_no()
