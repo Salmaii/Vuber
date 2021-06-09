@@ -1,3 +1,4 @@
 .idea
 .vscode
 venv
+python/Arvore/__pycache__
