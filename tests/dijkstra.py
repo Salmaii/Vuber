@@ -120,7 +120,6 @@ qntd = int(input("Insira a quantidade de alunos: "))
 qntdtotal = qntd + 2
 print(f'Olá, quantidade = {qntdtotal}')
 g = Grafo(qntdtotal)
-
 i = int(((qntdtotal * qntdtotal) - qntdtotal)/2)
 print(f'Existem {i} interacoes')
 

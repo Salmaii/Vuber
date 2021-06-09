@@ -66,7 +66,7 @@ if __name__ == '__main__':
     print(graph)
 
     graph.add_edge('a', 'd', 69, bidirectional=False)  # deve atualizar
-    graph.add_edge('a', 'z', 99)  # deve adicionar
+    graph.add_edge('a', 'z', 99)  #deve adicionar
 
     print(graph)
 

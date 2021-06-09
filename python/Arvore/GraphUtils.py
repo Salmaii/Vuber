@@ -1,5 +1,4 @@
-from machine_learning_class.Graph import Graph
-
+from Graph import Graph
 import networkx as nx
 import statistics
 import matplotlib.pyplot as plt
@@ -58,8 +57,69 @@ def generate_random_graph(nodes, max_cost=20):
 
     return _g
 
+"""
+def generate_graph(nodes, max_cost=20):
+
+    l = len(nodes)
+    _g = Graph({})
+
+    for i in range(l):
+        r1 = randint(1, l - 1)
+        r2 = randint(1, l - 1)
+
+        n1 = nodes[i]
+        n2 = nodes[(i + r1) % l]
+        n3 = nodes[(i + r2) % l]
+
+        _g.add_edge(n1, n2, randint(1, max_cost))
+        _g.add_edge(n1, n3, randint(1, max_cost))
+
+    return _g
+"""
+
 if __name__ == '__main__':
 
-    g = generate_random_graph('abcdefgh')
+    g = Graph({})
+
+    edges = [
+        ('a', 'b', 4), ('a', 'c', 8), ('a', 'd', 15), ('a', 'e', 24),
+        ('b', 'c', 30), ('b', 'd', 15), ('b', 'e', 20),
+        ('c', 'd', 8), ('c', 'e', 14),
+        ('d', 'e', 6)]
+    for e in edges:
+        g.add_edge(*e)
+
     print(g)
     print_graph(g)
+
+'''
+
+    - Funcao do vertice original
+    g = Graph({})
+    edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
+            ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
+    for e in edges:
+        g.add_edge(*e)
+    
+    
+    - Vertices aleatorios
+    #g = generate_graph('abcde')
+    #g = generate_random_graph('123456789')
+    
+    
+    - Vertices originais
+    edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
+            ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
+          
+            
+    - Vertices completos  
+    edges = [
+        ('a', 'b', 4), ('a', 'c', 8), ('a', 'd', 15), ('a', 'e', 24),
+        ('b', 'a', 4), ('b', 'c', 300), ('b', 'd', 15), ('b', 'e', 20),
+        ('c', 'a', 8), ('c', 'b', 300), ('c', 'd', 8), ('c', 'e', 14),
+        ('d', 'a', 15), ('d', 'b', 15), ('d', 'c', 8), ('d', 'e', 6),
+        ('e', 'a', 24), ('e', 'b', 20), ('e', 'c', 14), ('e', 'd', 6),
+    ]
+
+'''
+

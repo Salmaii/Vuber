@@ -85,7 +85,7 @@ def order_out_data():
   rotulos.sort()
   
   for i in rotulos:
-    print i
+    print (i)
   
   return rotulos
 
@@ -111,7 +111,7 @@ except IndexError:
 try:
   k_clusters = int(sys.argv[2])
 except IndexError:
-  print 'Informe a quantidade de grupos!'
+  print('Informe a quantidade de grupos!')
   sys.exit()
   
 dados = open(elements, "r")

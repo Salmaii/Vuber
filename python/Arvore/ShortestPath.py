@@ -1,4 +1,4 @@
-from machine_learning_class.Graph import Graph
+from Graph import Graph
 from queue import PriorityQueue
 from math import inf
 
@@ -73,17 +73,22 @@ def prim(graph, root):
             remaing_vertices.remove(vb)  # vb nao mais sera destino de busca, pois ja consta na solucao
             weight += min_cost  # Atualiza o peso
 
+
     return selected_edges, weight  # Retorna a lista de arestas selecionadas com o peso total
 
 
 if __name__ == '__main__':
 
     g = Graph({})
-    edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
-             ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
+    edges = [
+        ('a', 'b', 4), ('a', 'c', 8), ('a', 'd', 15), ('a', 'e', 24),
+        ('b', 'c', 30), ('b', 'd', 15), ('b', 'e', 20),
+        ('c', 'd', 8), ('c', 'e', 14),
+        ('d', 'e', 6)]
+    #edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
+    #        ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
     for e in edges:
         g.add_edge(*e)
-
     g_prim = Graph({})
     prim, w = prim(g, 'a')  # Retorna as arestas e o peso
     for e in prim:
