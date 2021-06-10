@@ -80,13 +80,16 @@ def prim(graph, root):
 if __name__ == '__main__':
 
     g = Graph({})
+    """" 
     edges = [
         ('a', 'b', 4), ('a', 'c', 8), ('a', 'd', 15), ('a', 'e', 24),
         ('b', 'c', 30), ('b', 'd', 15), ('b', 'e', 20),
         ('c', 'd', 8), ('c', 'e', 14),
-        ('d', 'e', 6)]
-    #edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
-    #        ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
+        ('d', 'e', 6),]
+    """
+    edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
+            ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
+    
     for e in edges:
         g.add_edge(*e)
     g_prim = Graph({})
@@ -97,11 +100,44 @@ if __name__ == '__main__':
     print('Grafo Original:\n%s' % g)
     print('--')
     print('Caminhos mais curtos desde o vertice \'a\':\n%s' % path_as_string(dijkstra(g, 'a')))
+    print('Caminhos mais curtos desde o vertice \'b\':\n%s' % path_as_string(dijkstra(g, 'b')))
+    print('Caminhos mais curtos desde o vertice \'c\':\n%s' % path_as_string(dijkstra(g, 'c')))
+    print('Caminhos mais curtos desde o vertice \'d\':\n%s' % path_as_string(dijkstra(g, 'd')))
+    print('Caminhos mais curtos desde o vertice \'e\':\n%s' % path_as_string(dijkstra(g, 'e')))
     print('--')
     print('Minimal Spanning Tree (Peso Final = %s):\n%s' % (w, g_prim))
 
-    """
-    from machine_learning_class.GraphUtils import print_graph
+
+    lista = prim
+    matriz = []
+
+    for palavra in lista:
+        matriz.append(list(palavra))
+
+    print(f'\n --> matriz {matriz}')
+
+    print(f'\n --> prim {lista}')
+
+
+    string = str(matriz[0])
+    string2 = str(matriz[3])
+
+    result = list(string)
+    result2 = list(string2)
+
+    print(f'\n --> Primeiro {result[7]}')
+    print(f'\n --> Ultimo {result2[7]}')
+    
+
+    edgesStart = [
+        ('Inicio', str(result[7]), 3), ('Final', str(result2[7]), 2)
+    ]
+    for e in edgesStart:
+        g.add_edge(*e)
+        g_prim.add_edge(*e)
+
+
+
+    from GraphUtils import print_graph
     print_graph(g)
     print_graph(g_prim)
-    """
