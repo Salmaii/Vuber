@@ -21,3 +21,14 @@
   5 →   3    14       5 → 3
   5 →   4     6       5 → 4
 """
+
+from itertools import permutations
+
+# Obtem todas as permutações
+perm = permutations(['a', 'b', 'c', 'd', 'e'])
+cont = 0
+
+# Imprime as permutações
+for i in list(perm):
+    cont = cont + 1
+    print(f'{cont} -> {i}')
