@@ -334,6 +334,9 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
 
+  grafo.PesoTotal = 0;
+
+
   int subtracao = ((nVertices)*(nVertices-3)/2);
 
   for (x = 0; x < totalArestas - subtracao; x++)
@@ -356,6 +359,36 @@ TipoGrafo CriaGrafo()
   }
 
   printf("Peso total do caminho = %i ", grafo.PesoTotal);
+  
+
+/*
+  int randomx, randomy, randomFor, randomPeso;
+  randomFor = rand() % totalArestas-1;
+
+  //Insere no grafo os pontos obrigatorios
+  for (x=0;x<totalArestas;x++){
+    y++;
+    randomx =  rand() % nVertices -1;
+    randomy = rand() % nVertices -1;
+    randomPeso = rand() % 1000;
+    v1 = randomx;
+    v2 = randomy;
+    InsereAresta(&v1, &v2, &peso, &grafo);
+    InsereAresta(&v2, &v1, &peso, &grafo);
+  }
+
+  //Insere alguns pontos extras no grafo
+  for (x=0; x<randomFor/2;x++){
+    randomx =  rand() % nVertices -1;
+    randomy = rand() % nVertices -1;
+    randomPeso = rand() % 1000;
+    v1 = randomx;
+    v2 = randomy;
+    InsereAresta(&v1, &v2, &peso, &grafo);
+    InsereAresta(&v2, &v1, &peso, &grafo);
+  }
+
+*/
 
 
 /*
