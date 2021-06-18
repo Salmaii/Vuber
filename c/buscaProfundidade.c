@@ -250,6 +250,7 @@ Caminho BuscaEmProfundidade(TipoGrafo *grafo)
   // RegistraUltimoPasso(&caminho, grafo);
 
   return caminho;
+  printf("Ultimo passo do caminho passos: -> %ls   total: -> %i \n", caminho.Passos , caminho.TotalPassos);
 }
 
 // Insere o indice do vertice no caminho a ser percorrido

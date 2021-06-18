@@ -334,11 +334,11 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
 
-  grafo.PesoTotal = 0;
 
 
   int subtracao = ((nVertices)*(nVertices-3)/2);
 
+/*
   for (x = 0; x < totalArestas - subtracao; x++)
   {
     for (y = 0; y < totalArestas - subtracao; y++)
@@ -353,29 +353,44 @@ TipoGrafo CriaGrafo()
         InsereAresta(&v1, &v2, &peso, &grafo);
         InsereAresta(&v2, &v1, &peso, &grafo);
         grafo.NumArestas++;
-        grafo.PesoTotal = grafo.PesoTotal + peso;
       }
     }
   }
-
-  printf("Peso total do caminho = %i ", grafo.PesoTotal);
   
 
-/*
+
   int randomx, randomy, randomFor, randomPeso;
   randomFor = rand() % totalArestas-1;
 
   //Insere no grafo os pontos obrigatorios
-  for (x=0;x<totalArestas;x++){
+  for (x=0; x < nVertices;x++){
     y++;
-    randomx =  rand() % nVertices -1;
-    randomy = rand() % nVertices -1;
-    randomPeso = rand() % 1000;
-    v1 = randomx;
-    v2 = randomy;
+    if(x == nVertices-1){
+      y = 0;
+    }
+    randomPeso = rand() % 100;
+    v1 = x;
+    v2 = y;
+    peso = randomPeso;
+    printf("v1: %i  v2: %i  peso: %i \n", v1, v2, peso);
     InsereAresta(&v1, &v2, &peso, &grafo);
     InsereAresta(&v2, &v1, &peso, &grafo);
   }
+
+  for(x=0; x < nVertices - subtracao/2 ; x++){
+    randomy = rand() % nVertices-1;
+    if(x != y+1 && y != 0){
+      randomPeso = rand() % 100;
+      v1 = x;
+      v2 = y;
+      peso = randomPeso;
+      printf("v1: %i  v2: %i  peso: %i \n", v1, v2, peso);
+      InsereAresta(&v1, &v2, &peso, &grafo);
+      InsereAresta(&v2, &v1, &peso, &grafo);
+    }
+  }
+
+
 
   //Insere alguns pontos extras no grafo
   for (x=0; x<randomFor/2;x++){
@@ -387,11 +402,9 @@ TipoGrafo CriaGrafo()
     InsereAresta(&v1, &v2, &peso, &grafo);
     InsereAresta(&v2, &v1, &peso, &grafo);
   }
-
 */
 
 
-/*
   v1 = 0;
   v2 = 2;
   peso = 2;
@@ -400,11 +413,20 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas++;
 
   v1 = 0;
+  v2 = 1;
+  peso = 60000;
+  InsereAresta(&v1, &v2, &peso, &grafo);
+  InsereAresta(&v2, &v1, &peso, &grafo);
+  grafo.NumArestas++;
+
+/*
+  v1 = 0;
   v2 = 6;
   peso = 6;
   InsereAresta(&v1, &v2, &peso, &grafo);
   InsereAresta(&v2, &v1, &peso, &grafo);
   grafo.NumArestas++;
+*/
 
   v1 = 0;
   v2 = 7;
@@ -497,7 +519,7 @@ TipoGrafo CriaGrafo()
   InsereAresta(&v2, &v1, &peso, &grafo);
   grafo.NumArestas++;
 
-  */
+  
 
   /*nVertices = 30;
     grafo.NumVertices = nVertices;
