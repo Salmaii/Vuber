@@ -74,7 +74,7 @@ int main()
     getchar();
   }
 
-  printf("\n\nPCV :)\n");
+  printf("\n");
   return 0;
 }
 
@@ -298,6 +298,7 @@ void ExibeCaminho(Caminho *caminho, TipoGrafo *grafo)
     if (erro == FALSE)
       printf("%d", caminho->Passos[i]);
   }
+   printf("Caminho total: %d", grafo->PesoTotal);
 }
 
 // Imprime a matriz de adjancencias

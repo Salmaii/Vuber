@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 typedef struct
 {
 	int origem;
@@ -14,24 +15,8 @@ int pesoTotal(int origem, int destino, int qntd_pesos);
 
 int main(int argc, char *argv[])
 {
-	int TAM=5;
-	int vet[TAM][TAM];
 	int i = 0;
-	int j;
 	int qtd = 0;
-
-	for (i = 0; i < TAM; i++)
-	{
-		for ( j = 0; j < TAM; j++)
-		{
-			printf("\nValor: ");
-			scanf("%d", &vet[TAM][TAM]);
-		}
-		
-	}
-	
-
-	/*
 	int calculaPeso = 0;
 	int total = 0;
 	Pesos peso[5];
@@ -65,7 +50,7 @@ int main(int argc, char *argv[])
 
 	printf("Peso Total: %d", total);
 	printf("\n");
-	return 0;*/
+	return 0;
 }
 
 void troca(int vetor[], int i, int j)
