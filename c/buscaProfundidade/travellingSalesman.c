@@ -51,7 +51,6 @@ TipoGrafo CriaGrafo();
 
 int main()
 {
-
   printf("-----------------------------------------------------------------\n");
   TipoGrafo grafo = CriaGrafo();
   Caminho caminho = BuscaEmProfundidade(&grafo);
@@ -332,6 +331,8 @@ TipoGrafo CriaGrafo()
 
   printf("\nEste grafo terá %i vertices e todos estarão conectados por arestas\n\n", totalArestas*2);
   
+
+  /*
   grafo.NumVertices = nVertices;
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
@@ -356,9 +357,11 @@ TipoGrafo CriaGrafo()
     }
   }
 
+  */
+
 
 //Grafo de 8 vertices incompleto
-/*
+
 
   nVertices = 8;
   grafo.NumVertices = nVertices;
@@ -373,13 +376,6 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas++;
 
   v1 = 0;
-  v2 = 1;
-  peso = 60000;
-  InsereAresta(&v1, &v2, &peso, &grafo);
-  InsereAresta(&v2, &v1, &peso, &grafo);
-  grafo.NumArestas++;
-
-  v1 = 0;3
   v2 = 6;
   peso = 6;
   InsereAresta(&v1, &v2, &peso, &grafo);
@@ -476,7 +472,6 @@ TipoGrafo CriaGrafo()
   InsereAresta(&v1, &v2, &peso, &grafo);
   InsereAresta(&v2, &v1, &peso, &grafo);
   grafo.NumArestas++;
-*/
 
 
 //Grafo de 30 vertices completo com peso=1 sempre 
