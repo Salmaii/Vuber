@@ -80,7 +80,6 @@ def prim(graph, root):
 if __name__ == '__main__':
 
     g = Graph({})
-    """" 
     edges = [
         ('a', 'b', 4), ('a', 'c', 8), ('a', 'd', 15), ('a', 'e', 24),
         ('b', 'c', 30), ('b', 'd', 15), ('b', 'e', 20),
@@ -89,7 +88,7 @@ if __name__ == '__main__':
     """
     edges = [('a', 'b', 17), ('a', 'e', 14), ('a', 'h', 5), ('b', 'g', 18), ('b', 'h', 13), ('c', 'e', 20),
             ('c', 'f', 2), ('d', 'e', 19), ('d', 'g', 8), ('e', 'g', 12), ('f', 'g', 1), ('f', 'h', 13)]
-    
+    """
     for e in edges:
         g.add_edge(*e)
     g_prim = Graph({})
@@ -105,8 +104,7 @@ if __name__ == '__main__':
     print('Caminhos mais curtos desde o vertice \'d\':\n%s' % path_as_string(dijkstra(g, 'd')))
     print('Caminhos mais curtos desde o vertice \'e\':\n%s' % path_as_string(dijkstra(g, 'e')))
     print('--')
-    print('Minimal Spanning Tree (Peso Final = %s):\n%s' % (w, g_prim))
-
+    print('Minimal Spanning Tree A (Peso Final = %s):\n%s' % (w, g_prim))
 
     lista = prim
     matriz = []
@@ -125,10 +123,6 @@ if __name__ == '__main__':
     result = list(string)
     result2 = list(string2)
 
-    print(f'\n --> Primeiro {result[7]}')
-    print(f'\n --> Ultimo {result2[7]}')
-    
-
     edgesStart = [
         ('Inicio', str(result[7]), 3), ('Final', str(result2[7]), 2)
     ]
@@ -140,4 +134,4 @@ if __name__ == '__main__':
 
     from GraphUtils import print_graph
     print_graph(g)
-    print_graph(g_prim)
+    #print_graph(g_prim)
