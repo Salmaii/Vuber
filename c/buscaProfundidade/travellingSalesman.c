@@ -334,11 +334,8 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
 
-
-
   int subtracao = ((nVertices)*(nVertices-3)/2);
 
-/*
   for (x = 0; x < totalArestas - subtracao; x++)
   {
     for (y = 0; y < totalArestas - subtracao; y++)
@@ -357,8 +354,7 @@ TipoGrafo CriaGrafo()
     }
   }
   
-
-
+/*
   int randomx, randomy, randomFor, randomPeso;
   randomFor = rand() % totalArestas-1;
 
@@ -404,7 +400,7 @@ TipoGrafo CriaGrafo()
   }
 */
 
-
+/*
   v1 = 0;
   v2 = 2;
   peso = 2;
@@ -420,13 +416,15 @@ TipoGrafo CriaGrafo()
   grafo.NumArestas++;
 
 /*
-  v1 = 0;
+  v1 = 0;3
   v2 = 6;
   peso = 6;
   InsereAresta(&v1, &v2, &peso, &grafo);
   InsereAresta(&v2, &v1, &peso, &grafo);
   grafo.NumArestas++;
 */
+
+/*
 
   v1 = 0;
   v2 = 7;
@@ -519,7 +517,7 @@ TipoGrafo CriaGrafo()
   InsereAresta(&v2, &v1, &peso, &grafo);
   grafo.NumArestas++;
 
-  
+  */
 
   /*nVertices = 30;
     grafo.NumVertices = nVertices;
