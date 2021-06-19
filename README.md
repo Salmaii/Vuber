@@ -1,7 +1,7 @@
 # Vuber
 
-<p align="center" width=100 height=100>
-<img src="https://github.com/Salmaii/Vuber/blob/main/src/Vuber%20Logo.png" alt="Logo Vuber" />
+<p align="center">
+<img src="https://github.com/Salmaii/Vuber/blob/main/src/Vuber%20Logo.png" width=50 alt="Logo Vuber" />
 </p>
   
   
