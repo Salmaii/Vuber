@@ -26,7 +26,7 @@ O Problema do Caixeiro Viajante (PCV) é um problema que tenta determinar a meno
 O algoritmo de busca em profundidade varre um grafo e visita todos seus vértices e todos seus arcos. À medida que varre o grafo, o algoritmo pinta cada vértice de cinza e depois de preto. Quando descobre um novo vértice, o algoritmo pinta o vértice de cinza; quando termina de visitar todos os vizinhos do vértice, o algoritmo pinta o vértice de preto. Os vértices cinza são considerados ativos e os pretos são considerados mortos.
 <p>
   
-###Aplicação
+### Aplicação
 <p>
 Existem várias aplicações para o algorítimo de busca em profundidade, no nosso caso usamos ele para resolver o problema do caixeiro viajante, que mostra a menor rota passando por todos os vértices do mapa uma vez, e logo depois voltando para o vértice inicial. 
 Dentre outras aplicações, é possível usar o algorítimo de busca em profundidade para resolver labirintos, ordenações topológica entre outros.
