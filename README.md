@@ -48,4 +48,4 @@ O Problema do Caixeiro Viajante (PCV) é um problema que tenta determinar a meno
 | --------------------------------- | ---------- |
 | Gabriel Salmai Camargo Farias     | 1922130017 |
 | Luis Felipe Carvalho              | 1922130018 |
-| Willian M. Santos                 | 1812130083 |
+| Willian M. Santos                 | 1822140044 |
