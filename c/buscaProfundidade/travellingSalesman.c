@@ -58,7 +58,7 @@ int main()
   printf("\nMatriz representando o Grafo: \n");
   ImprimeGrafo(&grafo);
 
-  printf("\n\nCaminho sugerido ao Caixeiro Viajante: \n");
+  printf("\n\nCaminho sugerido ao Motorista: \n");
   ExibeCaminho(&caminho, &grafo);
 
   printf("\n");
