@@ -322,17 +322,17 @@ TipoGrafo CriaGrafo()
   TipoGrafo grafo;
   TipoValorVertice nVertices;
 
+
 //Grafo com funcao de input
 
+ /*
   int x = 0, y = 0, totalArestas = 0, numRota = 1;
   printf("Digite a quantidade de vertices: ");
   scanf("%d", &nVertices);
   totalArestas = (((nVertices * nVertices) - nVertices) / 2);
 
-  printf("\nEste grafo terá %i vertices e todos estarão conectados por arestas\n\n", totalArestas*2);
-  
-
-  /*
+  printf("\nEste grafo terá %i vertices e todos estarão conectados por arestas\n\n", nVertices);
+ 
   grafo.NumVertices = nVertices;
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
@@ -360,10 +360,13 @@ TipoGrafo CriaGrafo()
   */
 
 
-//Grafo de 8 vertices incompleto
-
+//Grafo de 8 vertices nao completo
 
   nVertices = 8;
+
+  printf("\nEste grafo terá %i vertices e todos estarão conectados por arestas\n\n", nVertices);
+
+
   grafo.NumVertices = nVertices;
   grafo.NumArestas = VAZIO;
   FGVazio(&grafo);
